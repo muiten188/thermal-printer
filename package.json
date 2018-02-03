@@ -1,67 +1,15 @@
 {
-  "_args": [
-    [
-      {
-        "raw": "react-native-xprinter@^0.1.2",
-        "scope": null,
-        "escapedName": "react-native-xprinter",
-        "name": "react-native-xprinter",
-        "rawSpec": "^0.1.2",
-        "spec": ">=0.1.2 <0.2.0",
-        "type": "range"
-      },
-      "C:\\Users\\bachbd\\Desktop\\react-native\\hapulico_app_git"
-    ]
-  ],
-  "_from": "react-native-xprinter@>=0.1.2 <0.2.0",
-  "_id": "react-native-xprinter@0.1.2",
-  "_inCache": true,
-  "_location": "/react-native-xprinter",
-  "_nodeVersion": "6.3.0",
-  "_npmOperationalInternal": {
-    "host": "packages-16-east.internal.npmjs.com",
-    "tmp": "tmp/react-native-xprinter-0.1.2.tgz_1472048185956_0.69915217673406"
-  },
-  "_npmUser": {
-    "name": "pepper.yen",
-    "email": "pepper.yen@gmail.com"
-  },
-  "_npmVersion": "3.10.3",
-  "_phantomChildren": {},
-  "_requested": {
-    "raw": "react-native-xprinter@^0.1.2",
-    "scope": null,
-    "escapedName": "react-native-xprinter",
-    "name": "react-native-xprinter",
-    "rawSpec": "^0.1.2",
-    "spec": ">=0.1.2 <0.2.0",
-    "type": "range"
-  },
-  "_requiredBy": [
-    "/"
-  ],
-  "_resolved": "https://registry.npmjs.org/react-native-xprinter/-/react-native-xprinter-0.1.2.tgz",
-  "_shasum": "08a69c60f8277842245437af11ff321cdf733ce8",
-  "_shrinkwrap": null,
-  "_spec": "react-native-xprinter@^0.1.2",
-  "_where": "C:\\Users\\bachbd\\Desktop\\react-native\\hapulico_app_git",
-  "author": {
-    "name": "Pepper Yen",
-    "email": "pepper.yen@gmail.com"
-  },
-  "bugs": {
-    "url": "https://github.com/mybigday/react-native-xprinter/issues"
-  },
-  "dependencies": {},
+  "name": "react-native-xprinter",
+  "version": "0.1.2",
   "description": "This is an android xprinter driver.",
-  "devDependencies": {},
-  "directories": {},
-  "dist": {
-    "shasum": "08a69c60f8277842245437af11ff321cdf733ce8",
-    "tarball": "https://registry.npmjs.org/react-native-xprinter/-/react-native-xprinter-0.1.2.tgz"
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "gitHead": "b78ae65e8f771edf412be4ae96fc5b7ff3a98351",
-  "homepage": "https://github.com/mybigday/react-native-xprinter#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/muiten188/thermal-printer"
+  },
   "keywords": [
     "react",
     "native",
@@ -70,24 +18,6 @@
     "usb",
     "printer"
   ],
-  "license": "MIT",
-  "main": "index.js",
-  "maintainers": [
-    {
-      "name": "pepper.yen",
-      "email": "pepper.yen@gmail.com"
-    }
-  ],
-  "name": "react-native-xprinter",
-  "optionalDependencies": {},
-  "readme": "# React Native Xprinter\n\nXprinter driver currently only support android, and it's not finished yet.\n\n## Installation\n### Mostly automatic install\n\n```bash\n$ npm install react-native-xprinter --save\n$ react-native link\n```\n\n## Usage\n### Get bluetooth devices\nFirst of all you need get the bluetooth device list, and select one to use.\n\n```js\nimport { NativeModules } from 'react-native';\nimport RNXprinter from 'react-native-xprinter';\nRNXprinter.initialize();\n\n// Select a printer to use\nlet printerList = await RNXprinter.getDeviceList();\nawait RNXprinter.selectDevice(printerList[0].address);\n\n// Or you can use printer pick panel\nRNXprinter.pickPrinter();\n\n```\n\n### Print DEMO\nAfter you connected to your printer, try this to make sure everything except yourself is worked perfectly.\n\n```js\nawait RNXprinter.printDemoPage();\n```\n\n### Push things to buffer\nThermal printer is a kind of high speed printer, so we need push all things to the buffer first.\n\n```js\n// Push Text\n// text: string            # The string you want to print\n// size: number            # 0 ~ 7 Level\nRNXprinter.pushText(\"Hello World!!!\", 0);\n\n// Push Image\n// size: index             # The FLASH index of image\n// Currently only supported without download image, you need use your computer to help\nRNXprinter.pushFlashImage(0);\n\n// Push Cut Paper\nRNXprinter.pushCutPaper();\n\n```\n\n### Print\n```js\nawait RNXprinter.print();\n```\n\n## Contributing\n\n1. Fork it!\n2. Create your feature branch: `git checkout -b my-new-feature`\n3. Commit your changes: `git commit -am 'Add some feature'`\n4. Push to the branch: `git push origin my-new-feature`\n5. Submit a pull request :D\n\n## Roadmap\n\n- [x] Android support\n- [x] Save default printer\n- [ ] Test coverage\n- [x] Printer select panel\n- [ ] Download image to printer\n- [ ] USB support\n\n## Known Issues\n\n## History\n\nTODO: Write history\n\n## Credits\n\nTODO: Write credits\n\n## License\n\n[MIT](LICENSE.md)",
-  "readmeFilename": "README.md",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/muiten188/thermal-printer.git"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "version": "0.1.2"
+  "author": "NONO",
+  "license": "MIT"
 }
